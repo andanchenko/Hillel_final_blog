@@ -50,7 +50,6 @@ class PostService implements PostServiceInterface
     public function getFeaturedPosts(): ?Collection
     {
         $posts = Post::where('posts.is_publised', true)
-            //->join('categories', 'categories.id', '=', 'posts.category_id')
             ->limit(3)
             ->get();
         return $posts;
